@@ -26,7 +26,9 @@ Network is trained with 50000 generated images in GPU provided by Google Collab(
 
 ### Model performance
 Accuracy @ IoU thresholds at 0.7, 0.8, 0.9, 0.95 
-<img width="570" alt="image" src="https://user-images.githubusercontent.com/45058906/227055450-5e2d10cf-da53-45fb-bd7d-199a4077245d.png">
+
+<img width="572" alt="image" src="https://user-images.githubusercontent.com/45058906/227055886-5fe5760b-2eb0-4c46-ba0f-b8cc4a45da81.png">
+
 
 
 

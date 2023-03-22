@@ -1,6 +1,6 @@
 # Circle-Detection
 
-Deep learning Convolution network for detecting circle in a image with arbitrary noise. The output of the network are position of th ecircle and its radius. A simple network with convolution layers followed by fully connected layers is built using Pytorch.
+Deep learning Convolution network for detecting circle in a image with arbitrary noise. The output of the network are position of th ecircle and its radius. A simple network with convolution layers followed by fully connected layers is implemented in Pytorch.
 
 ## Model
 

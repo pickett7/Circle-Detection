@@ -18,11 +18,13 @@ Deep learning Convolution network for detecting circle in a image with arbitrary
 
 ### Validation
 
-`val.py`
+`eval.py -n <number_of_images_for_evaluation>`
 
 ## Evaluation
 
+Network is trained with 50000 generated images in GPU provided by Google Collab(Free). Model is trained with images with noise level 0.5. All the parametres of configurable.
 
+Accuracy based on IoU thresholds at 0.7, 0.8, 0.9, 0.95
 
 
 

@@ -51,6 +51,7 @@ def main():
 
     print("=> creating model")
     model = Net()
+    print(model)
     pytorch_total_params = sum(p.numel() for p in model.parameters())
 
     print("Number of params is ",pytorch_total_params)
@@ -65,7 +66,6 @@ def main():
         print("=> Start from the scratch ")
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    # model = nn.Mo(model)
     model.to(device)
 
     criterion1 = nn.MSELoss()
@@ -90,11 +90,11 @@ def main():
     output = open(args.envhome+args.out_file, "w")
     for epoch in range(args.start_epoch, args.epochs):
         # adjust_learning_rate(optimizer, epoch, args)
-        train1(train_loader, model, criterion1, criterion2, optimizer, epoch, args, device, len(trainset), output)
+        train(train_loader, model, criterion1, criterion2, optimizer, epoch, args, device, len(trainset), output)
         scheduler.step()
 
 
-def train1(train_loader, model, criterion1, criterion2, optimizer, epoch, args, device, len, file):
+def train(train_loader, model, criterion1, criterion2, optimizer, epoch, args, device, len, file):
 
     # switch to train mode
     model.train()

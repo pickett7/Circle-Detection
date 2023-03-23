@@ -10,7 +10,7 @@ Deep learning Convolution network for detecting circle in a image with arbitrary
 
 ### Data preparation
 
-`data_prep.py -n <number_of_training_image_to_be_generated>`
+`data_prep.py -n <number_of_training_image_to_be_generated> -nl <noise_level>`
 
 ### Training
 

@@ -18,7 +18,7 @@ Deep learning Convolution network for detecting circle in a image with arbitrary
 
 ### Validation
 
-`eval.py -n <number_of_images_for_evaluation>`
+`eval.py -n <number_of_images_for_evaluation> -nl <noise_level> -m <saved_model_path>`
 
 ## Evaluation
 

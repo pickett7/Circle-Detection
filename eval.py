@@ -10,10 +10,12 @@ parser = argparse.ArgumentParser(description='Model Evaluation')
 
 parser.add_argument('-n', '--number_of_images',default=1000, type=int,
                     help='Number of test images to be generated')
-parser.add_argument('-nl', '--noise_level', default=0.5, type=float
+parser.add_argument('-nl', '--noise_level', default=0.5, type=float,
                     help='Level of noise')
-parser.add_argument('-m','--model_path', default='model_eval.pth', type=str,
+parser.add_argument('-m','--model_path', default='model_eval.pth.tar', type=str,
                     help='Path to the saved model')
+parser.add_argument('-e','--envhome', default='', type=str,
+                    help='Home directory')
      
 
 def main():
@@ -33,17 +35,18 @@ def main():
         accAt80.append((val > 0.8))
         accAt90.append((val > 0.9))
         accAt95.append((val > 0.95))
-        # print()
 
-    print("Accuracy at IoU Threshold 0.7(%f %) \
-          \nAccuracy at IoU Threshold 0.8(%f %) \
-          \nAccuracy at IoU Threshold 0.9(%f %) \
-          \nAccuracy at IoU Threshold 0.95(%f %)",
-          (sum(accAt70) / args.number_of_images) * 100, (sum(accAt80) / args.number_of_images) * 100, (sum(accAt90) / args.number_of_images) * 100, (sum(accAt95) / args.number_of_images) * 100 )
+    output = 'Accuracy at IoU Threshold 0.7(%.2f %% ) \
+          \nAccuracy at IoU Threshold 0.8(%.2f %% ) \
+          \nAccuracy at IoU Threshold 0.9(%.2f %% ) \
+          \nAccuracy at IoU Threshold 0.95(%.2f %% )' % \
+          ((sum(accAt70) / args.number_of_images) * 100, (sum(accAt80) / args.number_of_images) * 100, (sum(accAt90) / args.number_of_images) * 100, (sum(accAt95) / args.number_of_images) * 100 )
+    
+    print(output)
 
 def find_circle(img,args):
     model = Net()
-    checkpoint = torch.load(args.model_path)
+    checkpoint = torch.load(args.envhome + args.model_path)
     model.load_state_dict(checkpoint)
     model.eval()
 

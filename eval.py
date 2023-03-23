@@ -19,6 +19,15 @@ parser.add_argument('-e','--envhome', default='', type=str,
      
 
 def main():
+    """
+    Trained model is evaluated
+
+    Evaluation metric used is accuracy 
+    
+    Returns accuracies(%) at different IoU threshold (0.7, 0.8, 0.9, 0.95)
+
+    """
+     
     args = parser.parse_args()
     print(args)
     accAt70 = [] 

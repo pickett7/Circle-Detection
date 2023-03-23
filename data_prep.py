@@ -19,6 +19,13 @@ parser.add_argument('-to', '--train_data_folder', default='train', type=str,
 
 
 def train_set():
+    """
+    Creating training data
+
+    Generating images with Circles in various positions nd of vaying radius
+    Generated image is then added with noise
+
+    """
     args = parser.parse_args()
     print(args)
 

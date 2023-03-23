@@ -25,7 +25,7 @@ Deep learning Convolution network for detecting circle in a image with arbitrary
 Network is trained with 50000 generated images in GPU provided by Google Collab(Free). Model is trained with images with noise level 0.5. All the parametres are configurable.
 
 ### Model performance
-Accuracy @ IoU thresholds at 0.7, 0.8, 0.9, 0.95 
+Accuracy @ IoU thresholds at 0.7, 0.8, 0.9, 0.95 (Evaluation done with 1000 images)
 
 <img width="582" alt="image" src="https://user-images.githubusercontent.com/45058906/227056151-d7cca9f3-7d7b-4f79-a37c-97170f644703.png">
 

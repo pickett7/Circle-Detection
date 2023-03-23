@@ -8,12 +8,14 @@ parser = argparse.ArgumentParser(description='Data Preparation')
 
 parser.add_argument('-n', '--number_of_training_image',default=200000, type=int,
                     help='Number of training images to be generated')
-parser.add_argument('-nl', '--noise_level', default=0.5, type=float
+parser.add_argument('-nl', '--noise_level', default=0.5, type=float,
                     help='Level of noise')
 parser.add_argument('-e','--envhome', default='', type=str,
                     help='Home directory')
 parser.add_argument('-o', '--dataset_out_name', default='train_set', type=str,
-                    help='path to output features file')      
+                    help='path to output features file') 
+parser.add_argument('-to', '--train_data_folder', default='train', type=str,
+                    help='folder of training ata')     
 
 
 def train_set():
@@ -27,8 +29,8 @@ def train_set():
         write(outFile, header)
         for i in tqdm(range(number_of_images)):
             img, params = generate_examples(noise_level=noise_level)
-            np.save(args.envhome + "datasets/" + args.dataset_out_name + "/" + str(i) + ".npy", img)
-            write(outFile, [args.envhome + "datasets/" + args.dataset_out_name + "/" + str(i) + ".npy", params.row, params.col, params.radius])
+            np.save(args.envhome + "datasets/" + args.train_data_folder + "/" + str(i) + ".npy", img)
+            write(outFile, [args.envhome + "datasets/" + args.train_data_folder + "/" + str(i) + ".npy", params.row, params.col, params.radius])
 
 
 if __name__ == '__main__':

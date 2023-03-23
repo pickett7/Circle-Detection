@@ -4,15 +4,15 @@ from tqdm import tqdm
 from tools.utils import generate_examples, write
 
 
-parser = argparse.ArgumentParser(description='PyTorch Model Training')
+parser = argparse.ArgumentParser(description='Data Preparation')
 
 parser.add_argument('-n', '--number_of_training_image',default=200000, type=int,
                     help='Number of training images to be generated')
-parser.add_argument('-nl', '--noise_level', default='new_out.txt',
+parser.add_argument('-nl', '--noise_level', default=0.5, type=float
                     help='Level of noise')
 parser.add_argument('-e','--envhome', default='', type=str,
                     help='Home directory')
-parser.add_argument('-o', '--dataset_out_name', default='train_set',
+parser.add_argument('-o', '--dataset_out_name', default='train_set', type=str,
                     help='path to output features file')      
 
 

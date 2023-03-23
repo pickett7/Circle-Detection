@@ -6,13 +6,13 @@ import torchvision.transforms as transforms
 from tools.utils import CircleParams, iou, generate_examples
 from tqdm import tqdm
 
-parser = argparse.ArgumentParser(description='PyTorch Model Training')
+parser = argparse.ArgumentParser(description='Model Evaluation')
 
 parser.add_argument('-n', '--number_of_images',default=1000, type=int,
                     help='Number of test images to be generated')
 parser.add_argument('-nl', '--noise_level', default=0.5, type=float
                     help='Level of noise')
-parser.add_argument('-m','--model_path', default='model_saved.tar', type=str,
+parser.add_argument('-m','--model_path', default='model_eval.pth', type=str,
                     help='Path to the saved model')
      
 
